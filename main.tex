@@ -1,0 +1,80 @@
+% =============================================================================
+% KONFIGURASI DOKUMEN LATEX - TEMPLATE TATESIS (FMIPA USK)
+% =============================================================================
+
+% --- Pengaturan Jenis Dokumen ---
+\documentclass{TATesis} % Menggunakan class khusus TATesis sebagai basis dokumen
+
+% --- Pemanggilan Paket Tambahan ---
+\usepackage{lipsum}     % Digunakan untuk menghasilkan teks dummy (placeholder)
+
+% --- Identitas dan Input Data Penelitian ---
+\jenis{1}               % Kategori dokumen: 1=Prop. TA, 2=Prop. Tesis, 3=TA, 4=Tesis
+\judulID{Judul Indonesia} % Judul utama dalam Bahasa Indonesia
+\judulEN{English Title}   % Terjemahan judul resmi dalam Bahasa Inggris
+\author{Nama Lengkap}    % Nama lengkap penulis sesuai identitas resmi
+\npm{240XXXXXXX}        % Nomor Pokok Mahasiswa
+\prodi{Matematika}      % Nama Program Studi (tulis tanpa awalan Sarjana/Magister)
+\departemen{Matematika} % Nama Departemen atau Fakultas
+\bulan{Januari, 2026}   % Bulan dan tahun terkini untuk penanggalan dokumen
+\pembimbingSatu{Dr. Satu}{19XXXXXXXX} % Nama & NIP Dosen Pembimbing Utama
+\pembimbingDua{Dr. Dua}{19XXXXXXXX}   % Nama & NIP Dosen Pembimbing Pendamping
+\koordinator{Dr. Koord}{19XXXXXXXX}   % Nama & NIP Koordinator Program Studi
+
+% --- Data Tambahan (Opsional untuk Dokumen Proposal) ---
+\dekan{Prof. Dr. Dekan}{19XXXXXXXX}    % Nama & NIP Dekan untuk pengesahan akhir
+% Bagian di bawah ini dilengkapi HANYA setelah melaksanakan sidang:
+\hariSidang{hari Rabu, 21 Januari 2026} % Hari dan tanggal pelaksanaan sidang
+\hariSah{hari Kamis, 22 Januari 2026}   % Hari dan tanggal pengesahan dokumen revisi
+
+% =============================================================================
+% MULAI ISI DOKUMEN
+% =============================================================================
+\begin{document}
+
+% --- Bagian Depan (Front Matter) ---
+\halamanJudul           % Menghasilkan halaman sampul depan
+\halamanPengesahan      % Menghasilkan lembar pengesahan pembimbing/penguji
+
+% Pernyataan & Abstrak di bawah ini umumnya hanya untuk laporan akhir (TA/Tesis).
+% Berikan tanda komentar (%) di awal baris jika sedang membuat PROPOSAL.
+\bebasPlagiasi          % Menghasilkan surat pernyataan orisinalitas karya
+\abstrakID{kunci1}{isi} % Parameter 1: Kata Kunci | Parameter 2: Teks Abstrak (Ind)
+\abstrakEN{key1}{text}  % Parameter 1: Keywords    | Parameter 2: Abstract Text (Eng)
+
+\kataPengantar{
+    \begin{enumerate}
+        \item Fulan      % Ucapan terima kasih kepada pihak ke-1
+        \item Fulan      % Ucapan terima kasih kepada pihak ke-2
+        \item dst        % Dan pihak-pihak lainnya
+    \end{enumerate}
+}
+
+% --- Daftar Tabel dan Gambar Otomatis ---
+\daftarIsi              % Menghasilkan Daftar Isi
+\daftarGambar           % Menghasilkan Daftar Gambar
+\daftarTabel            % Menghasilkan Daftar Tabel
+\daftarLampiran         % Menghasilkan Daftar Lampiran
+
+% --- Pengaturan Penomoran Halaman Inti ---
+\clearpage              % Berpindah ke halaman baru
+\fancyhf{}              % Reset header dan footer agar kosong
+\pagenumbering{arabic}  % Mulai penomoran halaman dengan angka (1, 2, 3...)
+\fancyfoot[R]{\thepage} % Atur posisi nomor halaman di sisi kanan bawah
+
+% --- Bagian Utama (Body Matter) ---
+% Menggunakan perintah \input untuk memanggil file .tex terpisah
+\input{BAB I}           % File: BAB I.tex (Berisi Pendahuluan)
+\input{BAB II}          % File: BAB II.tex (Berisi Tinjauan Pustaka)
+\input{BAB III}         % File: BAB III.tex (Berisi Metode Penelitian)
+
+% Bab IV dan V biasanya dinonaktifkan (%) saat tahap Proposal
+%\input{BAB IV}          % File: BAB IV.tex (Hasil dan Pembahasan)
+%\input{BAB V}           % File: BAB V.tex (Kesimpulan dan Saran)
+
+% --- Bagian Akhir (Back Matter) ---
+\daftarKepustakaan{references} % Memanggil referensi dari file references.bib
+\input{Lampiran}               % Memasukkan file Lampiran.tex (jika ada)
+
+\end{document}
+% =============================================================================
