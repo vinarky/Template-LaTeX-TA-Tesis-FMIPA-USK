@@ -102,6 +102,3 @@ Gunakan perintah berikut di dalam dokumen:
     \input{BAB III}
     % \input{BAB IV}
     % \input{BAB V}
-
-Author: Nama Anda  
-Affiliation: Mathematics Laboratory Assistant, Universitas Syiah Kuala
